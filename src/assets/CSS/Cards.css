@@ -41,11 +41,14 @@
   flex: 1;
 }
 .each-card:hover p {
-  transition: 800ms ease;
-  visibility: visible;
+  transition: 900ms ease;
+  /* visibility: visible; */
+  opacity: 1;
 }
 .secret {
-  visibility: hidden;
+  transition: 400ms ease;
+  /* visibility: hidden; */
+  opacity: 0;
 }
 /* .each-description p {
     visibility: hidden;

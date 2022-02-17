@@ -12,7 +12,7 @@ const Home = ({ apiUrl }) => {
       try {
         //ajouter des backtick et $ lorsque jaurai des query dans mon url
         const response = await axios.get(`${apiUrl}/characters`);
-        console.log("soooooooo", response.data);
+        // console.log("soooooooo", response.data);
 
         setData(response.data);
         setIsLoading(false);
@@ -33,7 +33,7 @@ const Home = ({ apiUrl }) => {
       <div className="cards-container">
         {data.results.map((characters, index) => {
           return (
-            <div>
+            <div key={characters._id}>
               <div className="card-block">
                 <Cards characters={characters} />
               </div>
