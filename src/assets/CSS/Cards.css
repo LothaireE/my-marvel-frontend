@@ -41,7 +41,7 @@
   flex: 1;
 }
 .each-card:hover p {
-  transition: 200ms ease;
+  transition: 800ms ease;
   visibility: visible;
 }
 .secret {

@@ -14,6 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home apiUrl={apiUrl} />} />
+        {/* <Route path="/characters" */}
       </Routes>
     </Router>
   );
