@@ -1,1 +1,18 @@
 /* Other rules */
+
+*,
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  font-size: 30px;
+}
+.cards-container {
+  border: solid black 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}

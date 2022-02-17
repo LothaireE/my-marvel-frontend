@@ -1,0 +1,22 @@
+.header-block {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.header-bars {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px red dashed;
+  box-sizing: border-box;
+}
+/* .header-top-bar {
+} */
+.header-banner {
+  max-width: 1200px;
+  object-fit: cover;
+}
+
+.header-down-bar {
+  border: 5px black dashed;
+  box-sizing: border-box;
+}
