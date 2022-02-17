@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Comic from "../components/Comic";
-import { Params } from "react-router-dom";
 
 const Comics = ({ apiUrl }) => {
   const [data, setData] = useState();
