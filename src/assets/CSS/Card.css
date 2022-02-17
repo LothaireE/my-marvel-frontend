@@ -1,0 +1,10 @@
+.card-block {
+  border: 5px chartreuse solid;
+}
+.character-name {
+  margin: 2%;
+  position: absolute;
+  text-shadow: 2px 2px 8px white;
+  color: black;
+  font-size: 50px;
+}

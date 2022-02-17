@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Cards from "../components/Cards";
 
 const Home = ({ apiUrl }) => {
@@ -22,7 +22,7 @@ const Home = ({ apiUrl }) => {
     };
 
     fetchData();
-  }, []);
+  }, [apiUrl]);
   return isLoading ? (
     <div>
       <h1>Stark Industrie</h1>
@@ -34,7 +34,7 @@ const Home = ({ apiUrl }) => {
         {data.results.map((characters, index) => {
           return (
             <div key={characters._id}>
-              <div className="card-block">
+              <div className="cards-block">
                 <Cards characters={characters} />
               </div>
             </div>

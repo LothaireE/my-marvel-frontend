@@ -1,0 +1,32 @@
+.comics-block {
+  display: flex;
+  border: 6px red solid;
+  flex-wrap: wrap;
+}
+.each-comic {
+  border: 5px solid chartreuse;
+  box-sizing: border-box;
+  display: flex;
+}
+.cover-bord {
+  display: flex;
+  justify-content: center;
+  border: 5px salmon solid;
+  flex: 1;
+}
+.comic-cover {
+  max-width: 300px;
+  margin: auto;
+  object-fit: cover;
+}
+.comic-info {
+  flex: 2;
+  box-sizing: border-box;
+  border: 3px solid blue;
+}
+.comic-title {
+  background-color: aqua;
+}
+.comic-text {
+  background-color: yellow;
+}
