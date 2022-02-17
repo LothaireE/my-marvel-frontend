@@ -6,19 +6,20 @@ const Character = ({ apiUrl }) => {
   const { id } = useParams();
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  console.log(id);
+  console.log("L'ID ===> ", id);
   useEffect(() => {
     const fectchData = async () => {
       try {
         const response = await axios.get(`${apiUrl}/comics/${id}`);
+
         console.log("response====+>", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
-      fectchData();
     };
+    fectchData();
   }, [id]);
 
   return isLoading ? (
