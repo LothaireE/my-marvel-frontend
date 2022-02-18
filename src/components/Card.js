@@ -3,6 +3,8 @@ import "../assets/CSS/Card.css";
 const Card = (character) => {
   // console.log("log de character", character.character.comics);
 
+  console.log("=====>", character);
+
   return (
     <div className="card-block">
       <div className="character">
@@ -18,13 +20,18 @@ const Card = (character) => {
         </div>
       </div>
 
-      <div>
+      <div className="comics-scroll">
         {character.character.comics.map((comics, index) => {
           return (
-            <img
-              src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
-              alt=""
-            />
+            <div className="test">
+              <div className="test-two">
+                <img
+                  className="comics-scroll-cover"
+                  src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
+                  alt=""
+                />
+              </div>
+            </div>
           );
         })}
       </div>

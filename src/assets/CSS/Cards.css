@@ -51,16 +51,31 @@
   /* visibility: hidden; */
   opacity: 0;
 }
-/* .each-description p {
-    visibility: hidden;
-  }
-  .each-card:hover .each-description p {
-    visibility: visible;
-  } */
+
 .each-name {
   margin: 10px 0px;
   margin-left: 2%;
 }
 .each-card:hover {
   box-shadow: 0 0 5px;
+}
+.what {
+  border: solid 4px red;
+}
+.comics-scroll {
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+/* .test {
+}
+.test-two {
+} */
+.test-two img {
+  object-fit: cover;
+}
+.comics-scroll-cover {
+  object-fit: cover;
+  margin: 10px;
+  max-width: 350px;
 }

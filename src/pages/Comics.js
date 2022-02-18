@@ -5,7 +5,7 @@ import Comic from "../components/Comic";
 const Comics = ({ apiUrl }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +40,9 @@ const Comics = ({ apiUrl }) => {
         {data.results.map((newComics, index) => {
           return (
             <div key={index}>
-              <Comic newComics={newComics} />
+              <div className="que">
+                <Comic newComics={newComics} />
+              </div>
             </div>
           );
         })}

@@ -3,15 +3,10 @@ import "../assets/CSS/Comic.css";
 const Comic = ({ newComics }) => {
   return (
     <div className="container">
-      <div>
-        <div className="each-comic">
-          <div className="comic-info">
-            <div className="comic-title">
-              <h1>{newComics.title}</h1>
-            </div>
-            <div className="comic-text">
-              <p>{newComics.description}</p>
-            </div>
+      <div className="each-comic">
+        <div className="comic-info">
+          <div className="comic-title">
+            <h1>{newComics.title}</h1>
           </div>
           <div className="cover-bord">
             <img
@@ -20,6 +15,10 @@ const Comic = ({ newComics }) => {
               alt=""
             />
           </div>
+        </div>
+
+        <div className="comic-text-block">
+          <p className="comic-text-secret">{newComics.description}</p>
         </div>
       </div>
     </div>

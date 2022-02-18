@@ -5,7 +5,7 @@ const Cards = ({ characters }) => {
   // console.log("description ====>", characters._id);
   return (
     <div className="container">
-      <Link to={`/character/${characters._id}`}>
+      <Link className="link-2" to={`/character/${characters._id}`}>
         <div className="each-card">
           <div>
             <div className="each-top">

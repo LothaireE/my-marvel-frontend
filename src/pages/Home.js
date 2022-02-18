@@ -6,14 +6,12 @@ import Cards from "../components/Cards";
 const Home = ({ apiUrl }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
+  const [search, setSearch] = useState("");
+  console.log(search);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        //ajouter des backtick et $ lorsque jaurai des query dans mon url
-        const response = await axios.get(`${apiUrl}/characters`);
-        // console.log("soooooooo", response.data);
-
+        const response = await axios.get(`${apiUrl}/characters?name=${search}`);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -22,7 +20,7 @@ const Home = ({ apiUrl }) => {
     };
 
     fetchData();
-  }, [apiUrl]);
+  }, [apiUrl, search]);
   return isLoading ? (
     <div>
       <h1>Stark Industrie</h1>
@@ -30,6 +28,14 @@ const Home = ({ apiUrl }) => {
   ) : (
     <div className="container">
       <h1>Choose your hero</h1>
+      <input
+        type="text"
+        value={search}
+        onChange={(event) => {
+          setSearch(event.target.value);
+          console.log(event.target.value);
+        }}
+      />
       <div className="cards-container">
         {data.results.map((characters, index) => {
           return (

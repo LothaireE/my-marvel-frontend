@@ -1,6 +1,6 @@
 // à venir
-import marvelbanner from "../assets/pictures/marvelbanner.jpeg";
 import "../assets/CSS/Header.css";
+import marvelbannertwo from "../assets/pictures/marvelbannertwo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -8,13 +8,17 @@ const Header = () => {
     <div className="header-block">
       <div className="header-bars">
         <div className="header-top-bar">
-          <Link to={"/"}>
-            <img className="header-banner" src={marvelbanner} alt="" />
+          <Link className="link-1" to={"/"}>
+            <img className="header-banner" src={marvelbannertwo} alt="" />
           </Link>
         </div>
         <div className="header-down-bar">
-          <Link to={"/characters"}>Personnages</Link>
-          <Link to={"/comics"}>Comics</Link>
+          <Link className="link-1" to={"/characters"}>
+            Personnages
+          </Link>
+          <Link className="link-1" to={"/comics"}>
+            Comics
+          </Link>
         </div>
       </div>
     </div>
