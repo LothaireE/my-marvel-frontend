@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
+import "../assets/CSS/Character.css";
 
 const Character = ({ apiUrl }) => {
   const { id } = useParams();
@@ -26,9 +27,11 @@ const Character = ({ apiUrl }) => {
       <h1>Loading...</h1>
     </div>
   ) : (
-    <div className="container">
-      <div className="card-block">
-        <Card character={data} />
+    <div className="page-background">
+      <div className="container">
+        <div className="card-block">
+          <Card character={data} />
+        </div>
       </div>
     </div>
   );

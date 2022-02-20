@@ -40,3 +40,30 @@ Link {
   text-decoration: none;
   text-shadow: 10px;
 }
+.searchbar {
+  display: flex;
+  margin: auto;
+  /* border: solid 10px chartreuse; */
+}
+.searchbar-input {
+  border: black solid 5px;
+  width: 50%;
+  line-height: 60px;
+  margin: 5px auto;
+
+  font-size: 20px;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+}
+/* .page-background {
+  background-image: url("../pictures/War_Machine_Marvel.jpeg");
+  background-size: auto;
+  background-position: 100%;
+  background-repeat: no-repeat;
+ 
+  margin: 0 auto;
+  background-color: #0d0b10;
+} */
+/* max-width: 1300px; */
+/* height: 1000px; */

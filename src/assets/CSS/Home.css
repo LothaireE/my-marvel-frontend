@@ -1,5 +1,21 @@
 /* ***** Home ***** */
-/* 
-.backwall {
-  background-image: url("../pictures/War_Machine_Marvel.jpeg");
-} */
+
+.background-one {
+  height: 1000px;
+  margin: auto;
+  background-color: #0d0b10;
+
+  /* background-color: #0e0808; */
+}
+.background-two {
+  background-image: url("../pictures/Vision_Marvel.jpeg");
+  background-size: auto;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  max-width: 1300px;
+  height: 1000px;
+  margin: 0 auto;
+  background-color: #0d0b10;
+  /* background-color: #0e0808; */
+  /* background-color: brown; */
+}

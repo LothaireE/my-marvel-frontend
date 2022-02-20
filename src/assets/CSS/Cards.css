@@ -1,76 +1,108 @@
-/* .container {
-  font-size: 30px;
-
-  max-width: 1200px;
-} */
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+
+.cards-container {
+  background-color: #0d0b10;
+  display: flex;
+  justify-content: space-around;
+  background-image: url("../pictures/Iron_Man_Marvel.jpeg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
 .each-card {
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: brown;
+  margin: 10px;
+  width: 500px;
+  background-color: #ed1c24;
+  padding: 20px;
+  border-radius: 20px;
+}
+.each-card-center {
+  display: flex;
+  flex-direction: column;
 }
 
 .cards-block {
-  margin: 10px;
-  border: 5px dashed black;
-  width: 400px;
+  display: flex;
 }
 
 .cards-block img {
-  width: 300px;
+  box-sizing: border-box;
   object-fit: cover;
 }
 .each-down,
 .each-top {
-  border: solid 4px chartreuse;
   box-sizing: border-box;
 }
 
 .each-top {
   display: flex;
 }
+
 .each-mugshot {
-  border: 2px solid cyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
   flex: 2;
 }
+
+.mugshot {
+  margin: auto;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border: solid black 4px;
+}
 .each-description {
-  font-size: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
   flex: 1;
+  line-height: 18px;
+  text-align: justify;
 }
 .each-card:hover p {
   transition: 900ms ease;
-  /* visibility: visible; */
   opacity: 1;
 }
+
 .secret {
+  flex: 1;
+  background-color: whitesmoke;
+  max-height: 350px;
+  overflow: hidden;
   transition: 400ms ease;
-  /* visibility: hidden; */
   opacity: 0;
+  padding: 10px;
+  margin: 10px;
+  border: solid 4px black;
+  border-radius: 10%;
+  font-size: 16px;
 }
 
 .each-name {
+  padding-left: 25px;
+  color: white;
+  font-weight: bold;
   margin: 10px 0px;
-  margin-left: 2%;
 }
 .each-card:hover {
   box-shadow: 0 0 5px;
 }
-.what {
-  border: solid 4px red;
-}
+
 .comics-scroll {
   display: flex;
   overflow: hidden;
   overflow-x: scroll;
 }
-/* .test {
-}
-.test-two {
-} */
+
 .test-two img {
   object-fit: cover;
 }

@@ -1,8 +1,6 @@
 import "../assets/CSS/Card.css";
 
 const Card = (character) => {
-  // console.log("log de character", character.character.comics);
-
   console.log("=====>", character);
 
   return (
@@ -14,6 +12,7 @@ const Card = (character) => {
 
         <div className="character-pic">
           <img
+            className="actual-pic"
             src={`${character.character.thumbnail.path}.${character.character.thumbnail.extension}`}
             alt="character"
           />

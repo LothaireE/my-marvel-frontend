@@ -1,17 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 import Cards from "../components/Cards";
-
+import "../assets/CSS/Characters.css";
 const Characters = ({ apiUrl }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
-  // const [page, setPage] = useState(1);
-  // console.log("page ====>", page);
-  // console.log("data ====>", data);
-
-  // const limit = 100;
 
   console.log(search);
   useEffect(() => {
@@ -29,39 +23,47 @@ const Characters = ({ apiUrl }) => {
     };
 
     fetchData();
-
-    // rajouter page dans le tableau avec apiUrl et search
   }, [apiUrl, search]);
   return isLoading ? (
     <div>
       <h1>Stark Industrie</h1>
     </div>
   ) : (
-    <div className="container">
-      <h1>Choose your hero</h1>
-      <input
-        type="text"
-        value={search}
-        onChange={(event) => {
-          setSearch(event.target.value);
-          console.log(event.target.value);
-        }}
-      />
-      {/* <div>
+    <div className="full-background">
+      <div className="characters-page-background">
+        <div className="page-background-pic">
+          <div className="container">
+            <div className="searchbar">
+              <input
+                className="searchbar-input"
+                placeholder="Need a hero ?"
+                type="text"
+                value={search}
+                onChange={(event) => {
+                  setSearch(event.target.value);
+                  console.log(event.target.value);
+                }}
+              />
+            </div>
+
+            {/* <div>
         <button onClick={() => setPage(page - 1)}>Page précédente</button>
         <button onClick={() => setPage(page + 1)}>Page suivante</button>
       </div> */}
 
-      <div className="cards-container">
-        {data.results.map((characters, index) => {
-          return (
-            <div key={characters._id}>
-              <div className="cards-block">
-                <Cards characters={characters} />
-              </div>
+            <div className="cards-container">
+              {data.results.map((characters, index) => {
+                return (
+                  <div key={characters._id}>
+                    <div className="cards-block">
+                      <Cards characters={characters} />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,23 @@
-.card-block {
-  border: 5px chartreuse solid;
-}
 .character-name {
   margin: 2%;
   position: absolute;
   text-shadow: 2px 2px 8px white;
   color: black;
   font-size: 50px;
+}
+.character {
+  display: flex;
+  justify-content: center;
+}
+.character-pic {
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 20px;
+}
+.actual-pic {
+  box-sizing: border-box;
+  object-fit: contain;
+  max-width: 700px;
+  max-height: 700px;
+  border-radius: 5px;
 }

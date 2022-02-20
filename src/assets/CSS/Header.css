@@ -7,7 +7,7 @@
 .header-bars {
   width: 1200px;
   margin: 0 auto;
-  border: 5px white dashed;
+  /* border: 5px red dashed; */
   border-radius: 10px;
   box-sizing: border-box;
 }
@@ -21,9 +21,11 @@
 }
 
 .header-down-bar {
-  border: 5px black dashed;
+  line-height: 80px;
+  /* border: 5px black dashed; */
   box-sizing: border-box;
   font-size: 40px;
   display: flex;
   justify-content: space-around;
+  text-shadow: 10 0 5px;
 }
