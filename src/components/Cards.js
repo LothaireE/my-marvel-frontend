@@ -2,7 +2,6 @@ import "../assets/CSS/Cards.css";
 import { Link } from "react-router-dom";
 
 const Cards = ({ characters }) => {
-  // console.log("description ====>", characters._id);
   return (
     <div className="cards-background ">
       <div className="container">

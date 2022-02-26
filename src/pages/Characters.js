@@ -55,9 +55,14 @@ const Characters = ({ apiUrl }) => {
               {data.results.map((characters, index) => {
                 return (
                   <div key={characters._id}>
-                    <div className="cards-block">
-                      <Cards characters={characters} />
-                    </div>
+                    {characters.thumbnail.path !==
+                    "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+                      <div className="cards-block">
+                        <Cards characters={characters} />
+                      </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 );
               })}
