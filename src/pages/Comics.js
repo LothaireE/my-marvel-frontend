@@ -47,9 +47,17 @@ const Comics = ({ apiUrl }) => {
           {data.results.map((newComics, index) => {
             return (
               <div key={index}>
-                <div className="que">
+                {newComics.thumbnail.path !==
+                "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+                  <div className="que">
+                    <Comic newComics={newComics} />
+                  </div>
+                ) : (
+                  ""
+                )}
+                {/* <div className="que">
                   <Comic newComics={newComics} />
-                </div>
+                </div> */}
               </div>
             );
           })}
