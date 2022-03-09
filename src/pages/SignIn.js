@@ -1,6 +1,6 @@
 import SignInForm from "../components/SignInForm";
 import "../assets/CSS/SignIn.css";
-const SignIn = () => {
+const SignIn = ({ setUser }) => {
   return (
     <div>
       <h1>Se connecter</h1>

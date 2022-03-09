@@ -3,7 +3,7 @@ import "../assets/CSS/SignUp.css";
 
 import SignUpForm from "../components/SignUpForm";
 
-const SignUp = () => {
+const SignUp = ({ setUser }) => {
   return (
     <div>
       <h1>Créer un compte</h1>

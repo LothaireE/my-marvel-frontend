@@ -1,16 +1,18 @@
 import axios from "axios";
 import { useState } from "react";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
-const SignUpForm = () => {
+const SignUpForm = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorPassword, setErrorPassword] = useState(false);
-  // const [] = useState ()
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    console.log(email);
     try {
       event.preventDefault();
       if (password !== confirmPassword) {
@@ -27,6 +29,14 @@ const SignUpForm = () => {
             password: password,
           }
         );
+        console.log("response.data==>", response.data);
+        if (response.data.token) {
+          setUser(response.data.token);
+          console.log(
+            "si ça s'affihe c'est bien parce que je suis au putain  de bon endofroit "
+          );
+          navigate("/");
+        }
       }
     } catch (error) {
       console.log(error.message);

@@ -17,27 +17,34 @@ import Cookies from "js-cookie";
 const apiUrl = "http://localhost:3001";
 
 function App() {
-  // const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [token, setToken] = useState(Cookies.get("userToken") || null);
 
-  // const setUser = (token) => {
-  //   if (token) {
-  //     Cookies.set("userToken", token, { expires: 10 });
-  //   } else {
-  //     Cookies.remove("userToken");
-  //   }
-  //   setToken(token);
-  // };
+  const setUser = (token) => {
+    if (token) {
+      Cookies.set("userToken", token, { expires: 10 });
+    } else {
+      Cookies.remove("userToken");
+    }
+    setToken(token);
+  };
+  console.log(setUser);
 
   return (
     <Router>
-      <Header />
+      <Header setUser={setUser} token={token} />
       <Routes>
         <Route path="/" element={<Home apiUrl={apiUrl} />} />
         <Route path="/characters" element={<Characters apiUrl={apiUrl} />} />
         <Route path="/comics" element={<Comics apiUrl={apiUrl} />} />
         <Route path="/character/:id" element={<Character apiUrl={apiUrl} />} />
-        <Route path="/signup" element={<SignUp apiUrl={apiUrl} />} />
-        <Route path="/signin" element={<SignIn apiUrl={apiUrl} />} />
+        <Route
+          path="/signup"
+          element={<SignUp setUser={setUser} apiUrl={apiUrl} />}
+        />
+        <Route
+          path="/signin"
+          element={<SignIn setUser={setUser} apiUrl={apiUrl} />}
+        />
       </Routes>
     </Router>
   );

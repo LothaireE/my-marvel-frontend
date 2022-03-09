@@ -1,10 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const SignInForm = () => {
+const SignInForm = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,6 +19,12 @@ const SignInForm = () => {
         email: email,
         password: password,
       });
+      if (response.data.token) {
+        setUser(response.data.token);
+        // Cookies.set("userId", response.data._id, { expires: 10 });
+        navigate("/");
+      }
+      console.log("response.data==>", response.data);
     } catch (error) {
       // if (
       //   error.response &&
