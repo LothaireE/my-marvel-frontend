@@ -3,12 +3,14 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  border: solid 5px yellow;
 }
 .header-bars {
   width: 1200px;
   margin: 0 auto;
   border-radius: 10px;
   box-sizing: border-box;
+  border: dashed 5px black;
 }
 .header-top-bar {
   margin: 0 auto;

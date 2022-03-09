@@ -1,18 +1,38 @@
-import React from "react";
+import axios from "axios";
+import { useState } from "react";
 
-const SignUpForm = (
-  handleSubmit,
-  setUsername,
-  setEmail,
-  setPassword,
-  setConfirmPassword,
-  username,
-  email,
-  password,
-  confirmPassword,
-  errorPassword
-) => {
-  console.log(username);
+const SignUpForm = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorPassword, setErrorPassword] = useState(false);
+  // const [] = useState ()
+
+  const handleSubmit = async (event) => {
+    console.log(email);
+    try {
+      event.preventDefault();
+      if (password !== confirmPassword) {
+        setErrorPassword(true);
+        //alert mdp incorrects
+      } else {
+        setErrorPassword(false);
+        console.log([username, email, password]);
+        const response = await axios.post(
+          "http://localhost:3001/users/signup",
+          {
+            username: username,
+            email: email,
+            password: password,
+          }
+        );
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <div>
@@ -27,6 +47,7 @@ const SignUpForm = (
         <span>Email</span>
         <input
           value={email}
+          type="email"
           placeholder="theHulk@avengers.io"
           onChange={(event) => setEmail(event.target.value)}
         />
@@ -56,7 +77,8 @@ const SignUpForm = (
           <span>Les mots de passe ne sont pas identiques</span>
         </div>
       )}
-      <input className="submit-button" value="Register" type="submit" />
+      <button onClick={handleSubmit}>S'isncire</button>
+      {/* <input className="submit-button" value="Register" type="submit" /> */}
     </form>
   );
 };
