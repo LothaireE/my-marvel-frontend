@@ -19,6 +19,12 @@ const Header = () => {
           <Link className="link-1" to={"/comics"}>
             Comics
           </Link>
+          <Link className="link-1" to={"/signup"}>
+            S'inscrire
+          </Link>
+          <Link className="link-1" to={"/signin"}>
+            Se connecter
+          </Link>
         </div>
       </div>
     </div>
