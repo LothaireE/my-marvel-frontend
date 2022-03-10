@@ -53,7 +53,7 @@ const Characters = ({ apiUrl }) => {
 
             <div className="cards-container">
               {data.results.map((characters, index) => {
-                console.log("data.results ===>", data.results);
+                // console.log("data.results ===>", data.results);
                 return (
                   <div key={characters._id}>
                     {characters.thumbnail.path !==

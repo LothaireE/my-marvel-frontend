@@ -1,10 +1,10 @@
 import SignInForm from "../components/SignInForm";
 import "../assets/CSS/SignIn.css";
-const SignIn = ({ setUser }) => {
+const SignIn = ({ setUser, setId }) => {
   return (
     <div>
       <h1>Se connecter</h1>
-      <SignInForm />
+      <SignInForm setUser={setUser} setId={setId} />
     </div>
   );
 };

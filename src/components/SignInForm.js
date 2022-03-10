@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const SignInForm = ({ setUser }) => {
+const SignInForm = ({ setUser, setId }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
@@ -11,16 +11,17 @@ const SignInForm = ({ setUser }) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log(email);
+    // event.preventDefault();
+    // console.log(email);
     try {
       event.preventDefault();
       const response = await axios.post("http://localhost:3001/users/signin", {
         email: email,
         password: password,
       });
-      if (response.data.token) {
+      if (response.data.token && response.data._id) {
         setUser(response.data.token);
+        setId(response.data._id);
         // Cookies.set("userId", response.data._id, { expires: 10 });
         navigate("/");
       }

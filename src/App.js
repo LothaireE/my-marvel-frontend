@@ -12,12 +12,22 @@ import SignUp from "./pages/SignUp";
 
 import { useState } from "react";
 import Cookies from "js-cookie";
+import Favorites from "./components/Favorites";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHandFist } from "@fortawesome/free-solid-svg-icons";
+library.add(faHandFist);
+{
+  /* <FontAwesomeIcon icon="fa-solid fa-hand-fist" /> */
+}
 
 // const apiUrl = "https://my-marvel-backend-lothaire.herokuapp.com";
 const apiUrl = "http://localhost:3001";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
+  // const [id, setId] = useState(Cookies.get("userId")|| null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
 
   const setUser = (token) => {
     if (token) {
@@ -25,26 +35,51 @@ function App() {
     } else {
       Cookies.remove("userToken");
     }
+
     setToken(token);
   };
-  console.log(setUser);
+  // console.log(setUser);
+
+  const setId = (userId) => {
+    if (userId) {
+      Cookies.set("userId", userId, { expires: 10 });
+    } else {
+      Cookies.remove("userId");
+    }
+    console.log("userId==>", userId);
+    setUserId(userId);
+  };
 
   return (
     <Router>
-      <Header setUser={setUser} token={token} />
+      <Header setUser={setUser} setId={setId} token={token} userId={userId} />
       <Routes>
         <Route path="/" element={<Home apiUrl={apiUrl} />} />
-        <Route path="/characters" element={<Characters apiUrl={apiUrl} />} />
-        <Route path="/comics" element={<Comics apiUrl={apiUrl} />} />
-        <Route path="/character/:id" element={<Character apiUrl={apiUrl} />} />
+        <Route
+          path="/characters"
+          element={
+            <Characters setUser={setUser} setId={setId} apiUrl={apiUrl} />
+          }
+        />
+        <Route
+          path="/comics"
+          element={<Comics setUser={setUser} setId={setId} apiUrl={apiUrl} />}
+        />
+        <Route
+          path="/character/:id"
+          element={
+            <Character setUser={setUser} setId={setId} apiUrl={apiUrl} />
+          }
+        />
         <Route
           path="/signup"
-          element={<SignUp setUser={setUser} apiUrl={apiUrl} />}
+          element={<SignUp setUser={setUser} setId={setId} apiUrl={apiUrl} />}
         />
         <Route
           path="/signin"
-          element={<SignIn setUser={setUser} apiUrl={apiUrl} />}
+          element={<SignIn setUser={setUser} setId={setId} apiUrl={apiUrl} />}
         />
+        <Route path="/favorites" element={<Favorites apiUrl={apiUrl} />} />
       </Routes>
     </Router>
   );

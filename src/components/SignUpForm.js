@@ -3,7 +3,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
-const SignUpForm = ({ setUser }) => {
+const SignUpForm = ({ setUser, setId }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,8 +30,9 @@ const SignUpForm = ({ setUser }) => {
           }
         );
         console.log("response.data==>", response.data);
-        if (response.data.token) {
+        if (response.data.token && response.data._id) {
           setUser(response.data.token);
+          setId(response.data._id);
           console.log(
             "si ça s'affihe c'est bien parce que je suis au putain  de bon endofroit "
           );
